@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- Menú Lateral -->
+<div class="sidebar bg-primary">
+    <button class="btn btn-primary w-100 text-start menu-toggle" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#menuContent" aria-expanded="false" aria-controls="menuContent">
+        <strong>Menú</strong>
+    </button>
+    
+    <div class="collapse" id="menuContent">
+        <div class="d-flex flex-column p-2">
+            <a href="AltaCliente.jsp" class="btn btn-outline-light mb-2 text-start">
+                Alta cliente
+            </a>
+            <a href="ListadoCliente.jsp" class="btn btn-outline-light text-start">
+                Listado de clientes
+            </a>
+        </div>
+    </div>
+</div>
