@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 /* Quitar los spinners en Chrome, Safari, Edge */
-input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button
-	{
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
@@ -12,39 +12,106 @@ input[type=number] {
 	-moz-appearance: textfield;
 }
 
-input {
-    width: 100%;
-    box-sizing: border-box; /* incluye padding y borde dentro del 100% */
-    padding: 8px 12px;
-    margin: 10px;
-	font-size: 16px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
+/* Contenedor del formulario con recuadro negro */
+.formulario-contenedor {
+	border: 3px solid #000000;
+	border-radius: 8px;
+	background-color: #ffffff;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header{
-	height:30px;
-	padding:30px 30px;
+/* Estilos para el header */
+.titulo-principal {
+	color: #333;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
 }
 
-.container{
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+.usuario-info {
+	color: #666;
+	font-style: italic;
+	margin-bottom: 0;
 }
 
-.login {
-	border: 2px solid black;
-	padding: 10px;
-	width: fit-content;
+/* Campos requeridos */
+.required-label::after {
+	content: " *";
+	color: #dc3545;
+	font-weight: bold;
 }
 
+/* Textos aclarativos */
 .aclarativo {
-	color: gray;	
+	color: #6c757d;
+	font-size: 0.875rem;
+	margin-top: 0.25rem;
 }
 
-/* Estilo al enfocar */
-input[type=number]:focus {
-	border-color: #007BFF;
-	outline: none;
-	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+/* Estilo para el botón de guardar */
+.boton-guardar {
+	background-color: #007bff;
+	border-color: #007bff;
+	padding: 0.75rem 2rem;
+	font-weight: bold;
+	transition: all 0.3s ease;
+}
+
+.boton-guardar:hover {
+	background-color: #0056b3;
+	border-color: #0056b3;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los inputs */
+.form-control, .form-select {
+	border: 2px solid #dee2e6;
+	border-radius: 4px;
+	padding: 0.75rem;
+	transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+	border-color: #007bff;
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Espaciado general */
+.container {
+	max-width: 1200px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.formulario-contenedor {
+		padding: 1.5rem !important;
+	}
+	
+	.boton-guardar {
+		width: 100%;
+	}
+}
+
+/* Estilo para el fondo de la página */
+.bg-light {
+	background-color: #f8f9fa !important;
+	min-height: 100vh;
+	padding-bottom: 2rem;
+}
+
+/* Estilo para las etiquetas */
+.form-label {
+	font-weight: 600;
+	color: #495057;
+	margin-bottom: 0.5rem;
+}
+
+/* Estilo específico para el select */
+.form-select {
+	cursor: pointer;
+}
+
+/* Asegurar que el contenedor del formulario tenga buen espaciado */
+main {
+	margin-top: 1rem;
 }

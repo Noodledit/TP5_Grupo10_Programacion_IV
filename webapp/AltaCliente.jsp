@@ -5,67 +5,130 @@
 <head>
 <meta charset="UTF-8">
 <title>Alta de cliente</title>
-<link rel="stylesheet" type="text/css" href="CSS/StyleSheet.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="CSS/StyleSheet.css">
 </head>
-<body>
-	<header>
-		<h1>Formulario de cliente</h1>
-	</header>
-	<main>
-		<section>
-			<aside></aside>
-		</section>
+<body class="bg-light">
+    <div class="container mt-4">
+        <header>
+            <h1 class="titulo-principal">Formulario de Cliente</h1>
+            <p class="usuario-info">Usuario: admin</p>
+        </header>
 
-		<section class="container">
+        <main>
+            <form class="formulario-contenedor p-4">
+                <!-- Primera fila: DNI y CUIL -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="dni" class="form-label required-label">DNI</label>
+                        <input class="form-control" required id="dni" type="number" 
+                               name="Dni" min="100000" max="99999999" 
+                               placeholder="12345678">
+                        <div class="aclarativo">Solo números: 6 a 8 dígitos (ej: 12345678)</div>
+                    </div>
 
-			<p class="col">
-				<label for="dni" class="form-label"> DNI * </label><br> <input
-					class="form-control" required id="dni" type="number" name="Dni"
-					min="100000" max="99999999" placeholder="35123456"> <br>
-				<span class="aclarativo"> Solo numeros de 6 a 8 digitos</span>
-			</p>
+                    <div class="col-md-6">
+                        <label for="cuil" class="form-label required-label">CUIL</label>
+                        <input class="form-control" required type="number" 
+                               name="Cuil" min="10000000000" max="99999999999" 
+                               placeholder="20123456789">
+                        <div class="aclarativo">Formato: 11 dígitos (ej: 20131444515)</div>
+                    </div>
+                </div>
 
-			<p class="col">
-				<label for="cuil" class="form-label"> Cuil * </label> <br> <input
-					class="form-control" required type="number" name="Cuil"
-					max="99999999999" pattern="\d{11}" placeholder="20351234568">
-				<br> <span class="aclarativo"> Formato 11 digitos:</span>
-			</p>
+                <!-- Segunda fila: Nombre y Apellido -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="nombre" class="form-label required-label">Nombre</label>
+                        <input class="form-control" required id="nombre" 
+                               type="text" name="Nombre" placeholder="Juan">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="apellido" class="form-label required-label">Apellido</label>
+                        <input class="form-control" required id="apellido" 
+                               type="text" name="Apellido" placeholder="Pérez">
+                    </div>
+                </div>
 
+                <!-- Tercera fila: Sexo y Nacionalidad -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="sexo" class="form-label required-label">Sexo</label>
+                        <select class="form-select" id="sexo" name="Sexo" required>
+                            <option value="" disabled selected>-- Seleccione --</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
 
-			<p class="col">
-				<label for="nombre"> Nombre * </label> <br> <input required
-					id="nombre" type="text" name="Nombre" placeholder="Armando Estefan">
-			</p>
-			<p class="col">
-				<label for="apellido"> Apellido * </label> <br> <input required
-					id="apellido" type="text" name="Apellido"
-					placeholder="Tasticobanquito">
-			</p>
-			<p class="col">
-				<label for="sexo">Sexo *</label> <br> <select id="sexo"
-					name="Sexo">
-					<option value="" disabled selected>-- Seleccionar --</option>
-					<option value="Masculino">Masculino</option>
-					<option value="Femenino">Femenino</option>
-					<option value="Otro">Otro</option>
-				</select>
-			</p>
+                    <div class="col-md-6">
+                        <label for="nacionalidad" class="form-label">Nacionalidad</label>
+                        <input class="form-control" id="nacionalidad" 
+                               type="text" name="Nacionalidad" placeholder="Argentina">
+                    </div>
+                </div>
 
-			<p class="col">
-				<label for="nacionalidad"> Nacionalidad </label> <br> <input
-					id="nacionalidad" type="text" name="Nacionalidad"
-					placeholder="Argentina">
-			</p>
+                <!-- Fecha de nacimiento -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="fechaNacimiento" class="form-label required-label">Fecha de nacimiento</label>
+                        <input class="form-control" required id="fechaNacimiento" 
+                               type="date" name="FechaNacimiento">
+                        <div class="aclarativo">dd / mm / aaaa</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="localidad" class="form-label">Localidad</label>
+                        <input class="form-control" id="localidad"                                
+type="text" name="Localidad" placeholder="Ciudad">
+                    </div>
+                </div>
 
-		</section>
-	</main>
+                <!-- Dirección y Provincia -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input class="form-control" id="direccion" 
+                               type="text" name="Direccion" placeholder="Calle 123">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="provincia" class="form-label">Provincia</label>
+                        <input class="form-control" id="provincia" 
+                               type="text" name="Provincia" placeholder="Buenos Aires">
+                    </div>
+                </div>
 
-	<footer> </footer>
+                <!-- Correo y Teléfono -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="correo" class="form-label required-label">Correo electrónico</label>
+                        <input class="form-control" required id="correo" 
+                               type="email" name="Correo" placeholder="nombre@dominio.com">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input class="form-control" id="telefono" 
+                               type="tel" name="Telefono" placeholder="+54 11 1234-5678">
+                    </div>
+                </div>
+
+                <!-- Botón de envío -->
+                <div class="row">
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-lg boton-guardar">Guardar cliente</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
