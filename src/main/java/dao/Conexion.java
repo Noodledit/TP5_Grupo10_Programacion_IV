@@ -1,5 +1,22 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.CallableStatement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 public class Conexion {
 
+	private static final String host = "jdbc:mysql://localhost:3306/";
+	private static final String user = "root";
+	private static final String pass = "root";
+	private static final String DBName = "sistema_clientes";
+
+	public static Connection getConexion() throws SQLException {
+
+		return DriverManager.getConnection(host + DBName, user, pass);
+	}
 }
