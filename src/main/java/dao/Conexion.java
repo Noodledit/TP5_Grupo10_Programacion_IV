@@ -14,14 +14,7 @@ public class Conexion {
 	
 	
 	public static Connection getConexion() throws SQLException{
-		
-		
-		 return DriverManager.getConnection(host+DBName,user, pass);
-			 
+			
+		 return DriverManager.getConnection(host+DBName,user, pass);		 
 	}
-	
-	
-	
-	
-
 }

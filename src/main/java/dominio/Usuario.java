@@ -1,30 +1,41 @@
 package dominio;
 
 public class Usuario {
-	
-	private int idUser;
-	private String nombre;
+
+	private int idUsuario;
+	private String usuario;
 	private String contrasenia;
 	
-	public int getIdUser() {
-		return idUser;
+	public Usuario() {
 	}
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
+	
+	public Usuario(int idUsuario, String usuario, String contrasenia) {
+		this.idUsuario = idUsuario;
+		this.usuario = usuario;
+		this.contrasenia = contrasenia;
 	}
-	public String getNombre() {
-		return nombre;
+
+	public int getIdUsuario() {
+		return idUsuario;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
 	public String getContrasenia() {
 		return contrasenia;
 	}
+
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
 	}
-	
-	
-
 }
