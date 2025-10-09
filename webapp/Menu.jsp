@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+    String username = (String) session.getAttribute("username");
+    if (username == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 <!-- Menú Lateral -->
 <div class="sidebar bg-primary">
     <button class="btn btn-primary w-100 text-start menu-toggle" type="button" data-bs-toggle="collapse" 
