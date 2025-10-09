@@ -17,4 +17,13 @@ public class Conexion {
 			
 		 return DriverManager.getConnection(host+DBName,user, pass);		 
 	}
+	
+    public static void cargaMysqlDiver() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("Driver MySQL cargado correctamente!");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

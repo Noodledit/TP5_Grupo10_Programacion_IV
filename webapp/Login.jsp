@@ -16,8 +16,6 @@
 			Contraseña<br> <input type="password" name="txtContrasenia"><br>
 			<input type="submit" value="Ingresar" name="btnIngresar">
 		</form>
-		
-
 	</div>
 </body>
 </html>
