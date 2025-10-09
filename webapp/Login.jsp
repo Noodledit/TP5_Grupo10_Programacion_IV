@@ -10,11 +10,14 @@
 <body>
 	<div Class="login">
 		<b> Iniciar Sesión</b><br>
-		<form method="post" action="Login.jsp">
+		<form method="post" action="SistemaClientesServlet">
+			<input type="hidden" name="action" value="login">
 			Usuario<br> <input type="text" name="txtUsuario"><br>
-			Contraseña<br> <input type="text" name="txtContrasenia"><br>
+			Contraseña<br> <input type="password" name="txtContrasenia"><br>
 			<input type="submit" value="Ingresar" name="btnIngresar">
 		</form>
+		
+
 	</div>
 </body>
 </html>

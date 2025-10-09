@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+    // Validación de sesión sin declarar username aquí
+    if (session.getAttribute("username") == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +27,7 @@
         <div class="container mt-4">
             <header>
                 <h1 class="titulo-principal">Listado de Clientes</h1>
-                <p class="usuario-info">Usuario: admin</p>
+                <p class="usuario-info">Usuario: ${username}</p>
             </header>
 
             <main>
@@ -61,7 +68,6 @@
                             <td>Rosario</td>
                             <td>Santa Fe</td>
                         </tr>
-                        
                     </tbody>
                 </table>
             </main>

@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+    // Validación de sesión sin declarar username aquí
+    if (session.getAttribute("username") == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,12 +27,14 @@
         <div class="container mt-4">
             <header>
                 <h1 class="titulo-principal">Formulario de Cliente</h1>
-                <p class="usuario-info">Usuario: admin</p>
+                <p class="usuario-info">Usuario: ${username}</p>
             </header>
 
             <main>
-                <form class="formulario-contenedor p-4">
-                    <!-- Primera fila: DNI y CUIL -->
+                <form class="formulario-contenedor p-4" method="post" action="SistemaClientesServlet">
+                    <input type="hidden" name="action" value="altaCliente">
+                    
+                    <!-- Resto del formulario se mantiene igual -->
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="dni" class="form-label required-label">DNI</label>
