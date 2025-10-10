@@ -22,6 +22,24 @@ if (session.getAttribute("username") == null) {
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="CSS/StyleSheet.css">
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+	
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" charset="utf8"
+	src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#tablaListado_id').DataTable();
+	});
+</script>
+
+
+
+
 </head>
 <body class="bg-light">
 	<!-- Incluir el menú -->
@@ -44,7 +62,7 @@ if (session.getAttribute("username") == null) {
 					Mensaje = (String) request.getAttribute("Mensaje");
 				}
 				%>
-				<table class="table table-bordered table-striped mt-4">
+				<table id="tablaListado_id" class="table table-bordered table-striped mt-4">
 					<thead class="table-dark">
 						<tr>
 							<th>DNI</th>
