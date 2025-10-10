@@ -45,4 +45,37 @@ public class DaoClienteImp implements DaoCliente {
 
 		return lista;
 	}
+	
+	
+	public int altaCliente(Cliente client) {
+		
+		String consulta = "INSERT INTO clientes (dni, cuil, nombre, apellido, sexo, fecha_nacimiento, direccion, nacionalidad, localidad, provincia, correo_electronico, telefono) "
+				+ "VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?,?)";
+		
+		int filas = 0;
+		try(Connection conesion = Conexion.getConexion();
+				PreparedStatement pst = conesion.prepareStatement(consulta) ){
+			
+			pst.setString(1, client.getDni());
+			pst.setString(2, client.getCuil());
+			pst.setString(3, client.getNombre());
+			pst.setString(4, client.getApellido());
+			pst.setString(5, client.getSexo());
+			pst.setString(6, client.getFechaNacimiento());
+			pst.setString(7, client.getDireccion());
+			pst.setString(8, client.getNacionalidad());
+			pst.setString(9, client.getLocalidad());
+			pst.setString(10, client.getProvincia());
+			pst.setString(11, client.getCorreoElectronico());
+			pst.setString(12, client.getTelefono());
+			
+			filas = pst.executeUpdate();
+		}
+		catch (SQLException e) {
+            e.printStackTrace();
+        }
+		
+		return filas;
+	}
+
 }

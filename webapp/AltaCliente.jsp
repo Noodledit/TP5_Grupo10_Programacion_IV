@@ -31,6 +31,14 @@
             </header>
 
             <main>
+            
+            	<% 
+        		String mensaje = (String) request.getAttribute("mensaje"); 
+       			 if(mensaje != null) { 
+   				%>
+        		<div class="alert alert-info"><%= mensaje %></div>
+    			<% } %>
+            
                 <form class="formulario-contenedor p-4" method="post" action="SistemaClientesServlet">
                     <input type="hidden" name="action" value="altaCliente">
                     

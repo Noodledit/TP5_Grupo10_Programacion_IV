@@ -83,8 +83,58 @@ public class SistemaClientesServlet extends HttpServlet {
 	private void procesarAltaCliente(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Aquí va la lógica para guardar el cliente en la base de datos
-		// Por ahora solo redirigimos al listado
-		response.sendRedirect("ListadoClientes.jsp");
+		
+		
+			String dni = request.getParameter("Dni");
+			String cuil = request.getParameter("Cuil");
+			String nombre = request.getParameter("Nombre");
+			String apellido = request.getParameter("Apellido");
+			String sexo = request.getParameter("Sexo");
+			String fechaNacimiento = request.getParameter("FechaNacimiento");
+			String direccion = request.getParameter("Direccion");
+			String nacionalidad = request.getParameter("Nacionalidad");
+			String localidad = request.getParameter("Localidad");
+			String provincia = request.getParameter("Provincia");
+			String correoElectronico = request.getParameter("Correo");
+			String telefono = request.getParameter("Telefono");
+			
+			Cliente Client = new Cliente();
+			Client.setDni(dni);
+			Client.setCuil(cuil);
+			Client.setNombre(nombre);
+			Client.setApellido(apellido);
+			Client.setSexo(sexo);
+			Client.setFechaNacimiento(fechaNacimiento);
+			Client.setDireccion(direccion);
+			Client.setNacionalidad(nacionalidad);
+			Client.setLocalidad(localidad);
+			Client.setProvincia(provincia);
+			Client.setCorreoElectronico(correoElectronico);
+			Client.setTelefono(telefono);
+			
+			int filas = 0;
+		
+			try {
+		        filas = daoCliente.altaCliente(Client);
+		        System.out.println("se intento insertar un cliente");
+		        if(filas > 0) {
+		        System.out.println("Funciono xD");
+		        request.setAttribute("mensaje", "Se agrego el cliente");
+		        	
+		        	
+		        } else {
+		        System.out.println("Algo no funciono xD");
+		        request.setAttribute("mensaje", "No se agregó el cliente");   
+			}
+				
+			}catch (Exception e) {
+				e.printStackTrace();
+				 request.setAttribute("mensaje", "Hubo un fallo al intentar agregar el cliente: " + e.getMessage());
+				
+			}
+		
+		
+			request.getRequestDispatcher("AltaCliente.jsp").forward(request, response);
 	}
 
 	private void procesarListadoClientes(HttpServletRequest request, HttpServletResponse response)
