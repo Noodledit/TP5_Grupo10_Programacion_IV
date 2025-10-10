@@ -11,6 +11,20 @@
 <body>
     <div class="login">
         <b>Iniciar sesión</b>
+
+        <% 
+            String error = "";
+            if(request.getAttribute("error") != null) {
+                error = (String) request.getAttribute("error");
+            }
+        %>
+
+        <% if(!error.isEmpty()) { %>
+            <div style="color: red; font-weight: bold; margin-bottom: 10px;">
+                <%= error %>
+            </div>
+        <% } %>
+
         <form method="post" action="SistemaClientesServlet">
             <input type="hidden" name="action" value="login">
 
