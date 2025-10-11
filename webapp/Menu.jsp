@@ -14,10 +14,10 @@ if (username == null) {
 		type="button" data-bs-toggle="collapse" data-bs-target="#menuContent"
 		aria-expanded="false" aria-controls="menuContent">
 		<span class="hamburger-horizontal">
-        <span></span>
-        <span></span>
-        <span></span>
-    	</span>
+        	<span></span>
+        	<span></span>
+        	<span></span>
+    		</span>
 		<strong>Menú</strong>
 	</button>
 	
