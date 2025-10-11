@@ -8,7 +8,7 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="CSS/StyleSheet.css">
 </head>
-<body>
+<body class="login-page">
     <div class="login">
         <b>Iniciar sesión</b>
 

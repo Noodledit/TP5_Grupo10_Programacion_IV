@@ -14,10 +14,19 @@ input[type=number] {
 
 /* Contenedor del formulario con recuadro negro */
 .formulario-contenedor {
+	width: 100% !important;
+	margin: 2rem auto !important;
+    padding: 2rem !important;
 	border: 3px solid #000000;
 	border-radius: 8px;
 	background-color: #ffffff;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-formulario {
+    width: calc(100% - 250px);
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 /* Estilos para el header */
@@ -78,7 +87,8 @@ input[type=number] {
 
 /* Espaciado general */
 .container {
-	max-width: 1200px;
+	max-width: 1200px !important;
+	width: 95% !important;
 }
 
 /* Responsive adjustments */
@@ -162,7 +172,7 @@ main {
 /* Ajustar el contenido principal para el menú lateral */
 .main-content {
     margin-left: 250px;
-    padding: 20px;
+    padding: 40px;
 }
 
 /* Para móviles */
@@ -182,7 +192,7 @@ main {
 /* cositas para el login :)  */
 
 /* Estilo general del body */
-body {
+body.login-page {
     font-family: Arial, sans-serif;
     background-color: #f5f7fb;
     display: flex;
@@ -199,6 +209,7 @@ body {
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     width: 320px;
+    text-align: left;
 }
 
 /* Título */
@@ -247,4 +258,20 @@ body {
 /* Efecto hover */
 .login input[type="submit"]:hover {
     background-color: #0d5edb;
+}
+
+.hamburger-horizontal {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    position: relative;
+    top: -3px;
+}
+
+.hamburger-horizontal span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 3px 0;
 }

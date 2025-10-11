@@ -9,12 +9,19 @@ if (username == null) {
 }
 %>
 <!-- Menú Lateral -->
-<div class="sidebar bg-primary">
+ <div class="sidebar bg-primary">
 	<button class="btn btn-primary w-100 text-start menu-toggle"
 		type="button" data-bs-toggle="collapse" data-bs-target="#menuContent"
 		aria-expanded="false" aria-controls="menuContent">
+		<span class="hamburger-horizontal">
+        <span></span>
+        <span></span>
+        <span></span>
+    	</span>
 		<strong>Menú</strong>
 	</button>
+	
+	
 
 	<div class="collapse" id="menuContent">
 		<div class="d-flex flex-column p-2">

@@ -69,14 +69,14 @@ public class SistemaClientesServlet extends HttpServlet {
 
 				response.sendRedirect("AltaCliente.jsp");
 			} else {
-				request.setAttribute("error", "Usuario no registrado");
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				request.setAttribute("error", "Usuario no registrado o contraseña incorrecta");
+				request.getRequestDispatcher("Login.jsp").forward(request, response);
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("error", "Error en el sistema: " + e.getMessage());
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("Login.jsp").forward(request, response);
 		}
 	}
 

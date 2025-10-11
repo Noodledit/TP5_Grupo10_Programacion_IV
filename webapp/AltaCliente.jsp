@@ -20,11 +20,12 @@
 <link rel="stylesheet" type="text/css" href="CSS/StyleSheet.css">
 </head>
 <body class="bg-light">
+
     <!-- Incluir el menú -->
     <%@ include file="Menu.jsp" %>
     
     <div class="main-content">
-        <div class="container mt-4">
+        <div class="contenedor-formulario mt-4">
             <header>
                 <h1 class="titulo-principal">Formulario de Cliente</h1>
                 <p class="usuario-info">Usuario: ${username}</p>

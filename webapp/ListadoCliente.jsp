@@ -38,8 +38,6 @@ if (session.getAttribute("username") == null) {
 </script>
 
 
-
-
 </head>
 <body class="bg-light">
 	<!-- Incluir el menú -->
