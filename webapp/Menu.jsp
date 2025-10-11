@@ -9,26 +9,27 @@ if (username == null) {
 }
 %>
 <!-- Menú Lateral -->
- <div class="sidebar bg-primary">
-	<button class="btn btn-primary w-100 text-start menu-toggle"
-		type="button" data-bs-toggle="collapse" data-bs-target="#menuContent"
-		aria-expanded="false" aria-controls="menuContent">
-		<span class="hamburger-horizontal">
-        	<span></span>
-        	<span></span>
-        	<span></span>
-    		</span>
-		<strong>Menú</strong>
-	</button>
-	
-	
+<div class="sidebar bg-primary">
+    <input type="checkbox" id="hamburgerCheck" hidden>
+    <div class="menu-header d-flex align-items-center gap-2 p-2">
+        <!-- Label solo para hamburguesa -->
+        <label for="hamburgerCheck" class="hamburger-horizontal m-0">
+            <span class="taparriba"></span>
+            <span class="carne"></span>
+            <span class="tapabajo"></span>
+        </label>
 
-	<div class="collapse" id="menuContent">
-		<div class="d-flex flex-column p-2">
-			<a href="AltaCliente.jsp"
-				class="btn btn-outline-light mb-2 text-start"> Alta cliente </a> 
-			<a href="SistemaClientesServlet?Param=ListadoCliente"
+        <label for="hamburgerCheck" class="btn btn-primary w-100 text-start menu-toggle mb-0">
+            <strong>Menú</strong>
+        </label>
+    </div>
+
+    <div class="menu-content">
+        <div class="d-flex flex-column p-2">
+                <a href="AltaCliente.jsp"
+				class="btn btn-outline-light mb-2 text-start"> Alta cliente </a> <a
+				href="SistemaClientesServlet?Param=ListadoCliente"
 				class="btn btn-outline-light text-start"> Listado de clientes </a>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>

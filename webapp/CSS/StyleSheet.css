@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 /* Quitar los spinners en Chrome, Safari, Edge */
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button
+	{
 	-webkit-appearance: none;
 	margin: 0;
 }
@@ -16,7 +16,7 @@ input[type=number] {
 .formulario-contenedor {
 	width: 100% !important;
 	margin: 2rem auto !important;
-    padding: 2rem !important;
+	padding: 2rem !important;
 	border: 3px solid #000000;
 	border-radius: 8px;
 	background-color: #ffffff;
@@ -24,9 +24,9 @@ input[type=number] {
 }
 
 .contenedor-formulario {
-    width: calc(100% - 250px);
-    margin: 0 auto;
-    padding: 2rem;
+	width: calc(100% - 250px);
+	margin: 0 auto;
+	padding: 2rem;
 }
 
 /* Estilos para el header */
@@ -92,11 +92,10 @@ input[type=number] {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media ( max-width : 768px) {
 	.formulario-contenedor {
 		padding: 1.5rem !important;
 	}
-	
 	.boton-guardar {
 		width: 100%;
 	}
@@ -128,150 +127,181 @@ main {
 
 /* ESTILOS PARA EL MENÚ LATERAL */
 .sidebar {
-    width: 250px;
-    min-height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+	width: 250px;
+	min-height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .menu-toggle {
-    border: none;
-    border-radius: 0;
-    padding: 1rem;
-    font-size: 1.1rem;
-    color: white !important;
-    background-color: #0d6efd !important;
+	border: none;
+	border-radius: 0;
+	padding: 1rem;
+	font-size: 1.1rem;
+	color: white !important;
+	background-color: #0d6efd !important;
 }
 
 .menu-toggle:hover {
-    background-color: #0b5ed7 !important;
+	background-color: #0b5ed7 !important;
 }
 
 .menu-toggle:focus {
-    box-shadow: none !important;
+	box-shadow: none !important;
 }
 
 #menuContent .btn {
-    border: 1px solid rgba(255,255,255,0.3);
-    color: white;
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	color: white;
+	padding: 0.75rem 1rem;
+	margin-bottom: 0.5rem;
+	text-decoration: none;
+	transition: all 0.3s ease;
 }
 
 #menuContent .btn:hover {
-    background-color: rgba(255,255,255,0.2) !important;
-    color: white;
-    transform: translateX(5px);
+	background-color: rgba(255, 255, 255, 0.2) !important;
+	color: white;
+	transform: translateX(5px);
 }
 
 /* Ajustar el contenido principal para el menú lateral */
 .main-content {
-    margin-left: 250px;
-    padding: 40px;
+	margin-left: 250px;
+	padding: 40px;
 }
 
 /* Para móviles */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        min-height: auto;
-        position: relative;
-    }
-    
-    .main-content {
-        margin-left: 0;
-    }
+@media ( max-width : 768px) {
+	.sidebar {
+		width: 100%;
+		height: auto;
+		min-height: auto;
+		position: relative;
+	}
+	.main-content {
+		margin-left: 0;
+	}
 }
 
 /* cositas para el login :)  */
 
 /* Estilo general del body */
 body.login-page {
-    font-family: Arial, sans-serif;
-    background-color: #f5f7fb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f5f7fb;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
 }
 
 /* Contenedor del formulario */
 .login {
-    background-color: #fff;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    width: 320px;
-    text-align: left;
+	background-color: #fff;
+	padding: 30px 40px;
+	border-radius: 12px;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+	width: 320px;
+	text-align: left;
 }
 
 /* Título */
 .login b {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #222;
+	display: block;
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: #222;
 }
 
 /* Etiquetas */
 .login label {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #444;
+	display: block;
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #444;
 }
 
 /* Campos de texto */
-.login input[type="text"],
-.login input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    box-sizing: border-box;
+.login input[type="text"], .login input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	font-size: 14px;
+	box-sizing: border-box;
 }
 
 /* Botón */
 .login input[type="submit"] {
-    width: 100%;
-    background-color: #1677ff;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 15px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+	width: 100%;
+	background-color: #1677ff;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 6px;
+	font-size: 15px;
+	cursor: pointer;
+	margin-top: 20px;
+	transition: background-color 0.3s;
 }
 
 /* Efecto hover */
 .login input[type="submit"]:hover {
-    background-color: #0d5edb;
+	background-color: #0d5edb;
 }
 
+/* Hamburger icon */
 .hamburger-horizontal {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-    position: relative;
-    top: -3px;
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .hamburger-horizontal span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background-color: white;
-    margin: 3px 0;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: all 0.3s ease;
 }
+
+.taparriba { top: 4px; }
+.carne     { top: 10.5px; }
+.tapabajo  { top: 17px; }
+
+/* Animación de la hamburguesa al activar checkbox */
+#hamburgerCheck:checked + .menu-header .hamburger-horizontal .taparriba {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+#hamburgerCheck:checked + .menu-header .hamburger-horizontal .carne {
+  opacity: 0;
+}
+#hamburgerCheck:checked + .menu-header .hamburger-horizontal .tapabajo {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Menu contenido */
+.menu-content {
+  display: none;
+}
+
+/* Mostrar menú al activar checkbox */
+#hamburgerCheck:checked ~ .menu-content {
+  display: block;
+}
+
